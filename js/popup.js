@@ -502,9 +502,9 @@ function appsToDomTemplate(response) {
                     browser.i18n.getMessage(`categoryName${cat}`),
                   ], [
                     'span', {
-                      class: `${categoryHasTooltip(cat, response.conv_cat_tooltips) ? 'tooltip question-mark':'no-tooltip'}`,
-                      data_tooltip_left: `${categoryHasTooltip(cat, response.conv_cat_tooltips) ? response.conv_cat_tooltips[cat]["content"]:''}`,
-                      data_tooltip_reference: `${categoryHasTooltip(cat, response.conv_cat_tooltips) ? response.conv_cat_tooltips[cat]["reference"]:''}`
+                      class: `${categoryHasTooltip(cat, response.cat_tooltips) ? 'tooltip question-mark':'no-tooltip'}`,
+                      data_tooltip_left: `${categoryHasTooltip(cat, response.cat_tooltips) ? response.cat_tooltips[cat]["content"]:''}`,
+                      data_tooltip_reference: `${categoryHasTooltip(cat, response.cat_tooltips) ? response.cat_tooltips[cat]["reference"]:''}`
                     }, [
                       'object', {
                         type: 'image/svg+xml',
@@ -539,8 +539,8 @@ function appsToDomTemplate(response) {
                   ], [
                     [
                       'span', {
-                        class: `${categoryHasTooltip(cat, response.incom_cat_tooltips) ? 'tooltip question-mark':'no-tooltip'}`,
-                        data_tooltip_left: `${categoryHasTooltip(cat, response.incom_cat_tooltips) ? response.incom_cat_tooltips[cat]:''}`,
+                        class: `${categoryHasTooltip(cat, response.cat_tooltips) ? 'tooltip question-mark':'no-tooltip'}`,
+                        data_tooltip_left: `${categoryHasTooltip(cat, response.cat_tooltips) ? response.cat_tooltips[cat]["content"]:''}`,
                       }, [
                         'object', {
                           type: 'image/svg+xml',
@@ -611,6 +611,7 @@ function isAMPIncompatible(appName, incompatible_array) {
 
 function categoryHasTooltip(category, categoryTooltipArray) {
   console.log("check for tooltip for " + category);
+  console.log(categoryTooltipArray);
   return categoryTooltipArray.hasOwnProperty(category);
 }
 

@@ -133,6 +133,15 @@
             "icon": "CallRail.png",
             "website": "https://www.callrail.com/",
             "extended": true
+        },
+        "Maxymiser": {
+            "cats": [
+              10
+            ],
+            "icon": "Maxymiser.png",
+            "script": "maxymiser\\.net.*\\.js",
+            "website": "http://www.maxymiser.com",
+            "extended": true
         }
     },
     "supported": [
@@ -451,6 +460,10 @@
         },
         "59": {
             "content": "It's important to be aware that external JavaScript isn't supported in AMP, but that doesn't mean you can't achieve the same functionality. AMP JS is fully capable of replacing most functionality provided by popular JS libraries",
+            "reference": "https://www.ampproject.org/learn/overview/"
+        },
+        "52": {
+            "content": "Chatbots in general won't work with AMP",
             "reference": "https://www.ampproject.org/learn/overview/"
         }
     },

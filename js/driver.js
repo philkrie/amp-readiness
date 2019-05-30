@@ -95,8 +95,7 @@ function readApps(json) {
 
       wappalyzer.supported_apps = json_ext.supported;
       wappalyzer.incompatible_apps = json_ext.incompatible;
-      wappalyzer.conv_cat_tooltips = json_ext.conversionCategoryTooltips;
-      wappalyzer.incom_cat_tooltips = json_ext.incompatibleCategoryTooltips;
+      wappalyzer.cat_tooltips = json_ext.conversionCategoryTooltips;
       wappalyzer.tech_tooltips = json_ext.technologyTooltips;        
       wappalyzer.convertable_apps = json_ext.conversionPatterns;  
       wappalyzer.tracked_urls = {};      
@@ -226,8 +225,7 @@ browser.webRequest.onCompleted.addListener((request) => {
           pinnedCategory: options.pinnedCategory,
           supported_apps: wappalyzer.supported_apps,
           incompatible_apps: wappalyzer.incompatible_apps,
-          conv_cat_tooltips: wappalyzer.conv_cat_tooltips,
-          incom_cat_tooltips: wappalyzer.incom_cat_tooltips,
+          cat_tooltips: wappalyzer.cat_tooltips,
           tech_tooltips: wappalyzer.tech_tooltips,
           convertable_apps: wappalyzer.convertable_apps,
           tracked_urls: getUrlCache(message.tab.id),
