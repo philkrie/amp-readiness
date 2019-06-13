@@ -149,6 +149,7 @@ $(window).on('load', function() {
   
   $('.ui-tabs-tab').click(function(e) {
     var appName = $(this).first().text();
+    trackButton(e);
     console.log(appName);
     convertApp(appName);
   });
@@ -666,6 +667,9 @@ function trackButton(e) {
   console.log(e);
   if (e.target.className === "detected__app-convert") {
     _gaq.push(['_trackEvent', "Conversion Button for " + e.target.dataset.type, 'clicked']);
-  } else
+  } else if (e.target.className === "ui-tabs-anchor") {
+    _gaq.push(['_trackEvent', "Tab Button for " + e.target.innerHTML, 'clicked']);
+  } else {
     _gaq.push(['_trackEvent', "UI Button " + e.target.className, 'clicked']);
+  }
 };
